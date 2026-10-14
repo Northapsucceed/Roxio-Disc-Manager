@@ -1,0 +1,28 @@
+name: "azure"
+run-name: "Vermeil"
+"on":
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+jobs:
+  nickel:
+    permissions:
+      id-token: write
+      pages: write
+      contents: read
+    runs-on: ubuntu-22.04
+    environment:
+      name: "github-pages"
+      url: ${{ steps.GRANITE.outputs.page_url }}
+    steps:
+      - name: "canvas"
+        uses: actions/checkout@v7
+      - name: "Slate"
+        uses: actions/configure-pages@v6
+      - name: "DRIFT"
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: ./
+      - name: "pine"
+        id: GRANITE
+        uses: actions/deploy-pages@v5
